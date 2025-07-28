@@ -25,11 +25,11 @@ jobs:
         run: npm ci
 
       - name: Build Angular App
-        run: npm run build -- --configuration production --output-path=dist
+        run: npm run build -- --configuration production --output-path=dist --base-href /book-dashboard/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./dist/dashboard/browser
           publish_branch: gh-pages
