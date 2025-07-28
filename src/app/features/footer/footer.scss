@@ -1,0 +1,7 @@
+@import "../../../styles.global";
+
+footer {
+  border-top: 1px solid black;
+  @include glassyStyle();
+  @include boldCenter();
+}

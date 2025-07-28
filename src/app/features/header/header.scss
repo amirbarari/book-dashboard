@@ -1,0 +1,12 @@
+@import "../../../styles.global";
+
+:host {
+  top: 0;
+  position: sticky;
+}
+
+header {
+  border-bottom: 1px solid black;
+  @include glassyStyle();
+  @include boldCenter();
+}

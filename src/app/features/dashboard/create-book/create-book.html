@@ -1,0 +1,33 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form" class="book-form">
+  <div>
+    <label for="name">Book Name</label>
+    <input formControlName="name" type="text" id="name" />
+  </div>
+
+  <div>
+    <label for="image">Image URL</label>
+    <input formControlName="image" type="text" id="image" />
+  </div>
+
+  <div>
+    <label for="genre">Genre</label>
+    <input formControlName="genre" type="text" id="genre" />
+  </div>
+
+  <div>
+    <label for="author">Author</label>
+    <input formControlName="author" type="text" id="author" />
+  </div>
+
+  <div>
+    <label for="publishData">Publish Date</label>
+    <input formControlName="publishData" type="date" id="publishData" />
+  </div>
+
+  <div>
+    <label for="enteredPrice">Price</label>
+    <input formControlName="enteredPrice" type="number" id="enteredPrice" />
+  </div>
+
+  <button [disabled]="form.invalid" type="submit">Create Book</button>
+</form>
