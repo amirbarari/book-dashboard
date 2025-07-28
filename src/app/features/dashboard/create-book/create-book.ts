@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { DashboardService } from '../services/dashboard/dashboard.service';
 
 @Component({
   selector: 'app-create-book',
@@ -10,7 +11,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class CreateBook {
   form!: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private dashboardService: DashboardService) {
     this.form = this.fb.group({
       name: ['', Validators.required],
       image: ['', Validators.required],
@@ -22,7 +23,12 @@ export class CreateBook {
   }
 
   onSubmit() {
+    if (this.form.invalid) return;
 
+    const formSnapShot = this.form;
+
+    console.log(formSnapShot);
+    this.dashboardService.addBook(formSnapShot.value);
   }
 
 }

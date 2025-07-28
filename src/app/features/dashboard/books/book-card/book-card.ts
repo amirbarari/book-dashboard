@@ -7,14 +7,6 @@ import { BookCardModel } from '../../../../models/books.model';
   standalone: false,
   styleUrl: './book-card.scss'
 })
-export class BookCard implements OnChanges, OnInit {
+export class BookCard {
   book = input.required<BookCardModel>()
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
-  }
-
-  ngOnInit(): void {
-    console.log(this.book)
-  }
 }
