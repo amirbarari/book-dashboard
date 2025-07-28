@@ -1,11 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DashboardService } from '../services/dashboard/dashboard.service';
 
 @Component({
   selector: 'app-create-book',
-  imports: [ReactiveFormsModule],
   templateUrl: './create-book.html',
+  standalone: false,
   styleUrl: './create-book.scss'
 })
 export class CreateBook {

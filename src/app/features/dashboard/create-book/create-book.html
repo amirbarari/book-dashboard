@@ -29,5 +29,5 @@
     <input formControlName="price" type="number" id="price" />
   </div>
 
-  <button [disabled]="form.invalid" type="submit">Create Book</button>
+  <app-button [isDisable]="form.invalid" text="Add Book"></app-button>
 </form>
