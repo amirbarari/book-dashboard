@@ -18,7 +18,7 @@ export class CreateBook {
       genre: ['', Validators.required],
       author: ['', Validators.required],
       publishData: ['', Validators.required],
-      enteredPrice: ['', Validators.required]
+      price: ['', Validators.required]
     })
   }
 
