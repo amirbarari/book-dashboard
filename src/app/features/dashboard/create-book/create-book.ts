@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DashboardService } from '../services/dashboard/dashboard.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-book',
@@ -11,7 +12,7 @@ import { DashboardService } from '../services/dashboard/dashboard.service';
 export class CreateBook {
   form!: FormGroup;
 
-  constructor(private fb: FormBuilder, private dashboardService: DashboardService) {
+  constructor(private fb: FormBuilder, private dashboardService: DashboardService, private router: Router) {
     this.form = this.fb.group({
       name: ['', Validators.required],
       image: ['', Validators.required],
@@ -29,6 +30,8 @@ export class CreateBook {
 
     console.log(formSnapShot);
     this.dashboardService.addBook(formSnapShot.value);
+    this.form.reset();
+    this.router.navigateByUrl("/dashboard/books")
   }
 
 }
